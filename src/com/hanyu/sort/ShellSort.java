@@ -2,15 +2,16 @@ package com.hanyu.sort;
 
 public class ShellSort {
     public static void main(String[] args) {
-        int[] arr = new int[8000000];
+        int[] arr = new int[80000];
         for (int i = 0; i < arr.length; i++) {
             // 随机数为0-80000
             arr[i] = (int) (Math.random() * 80000);
         }
+
         long start = System.currentTimeMillis();
         System.out.println("排序前的时间为：" + start);
 
-        shellSort2(arr);
+        shellSort(arr);
 
         // 排序后的时间
         long end = System.currentTimeMillis();
