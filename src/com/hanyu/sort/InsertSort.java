@@ -5,23 +5,23 @@ public class InsertSort {
         int[] arr = new int[80000];
         for (int i = 0; i < arr.length; i++) {
             // 随机数为0-80000
-            arr[i] =(int) (Math.random()*80000);
+            arr[i] = (int) (Math.random() * 80000);
         }
 
         long start = System.currentTimeMillis();
-        System.out.println("排序前的时间为："+start);
+        System.out.println("排序前的时间为：" + start);
 
         insertSort(arr);
 
         // 排序后的时间
         long end = System.currentTimeMillis();
-        System.out.println("排序后的时间为："+end);
-        System.out.println("时间为："+(end-start));
+        System.out.println("排序后的时间为：" + end);
+        System.out.println("时间为：" + (end - start));
 
 
     }
 
-    public static void insertSort(int[] arr){
+    public static void insertSort(int[] arr) {
         // 使用逐步推导的方式来讲解，方便理解
         // 第1轮 {101,34,119,1} -> {34,101,119,1}
 
@@ -76,19 +76,20 @@ public class InsertSort {
 //        System.out.println("第2轮插入");
 //        System.out.println(Arrays.toString(arr));
 
-
+        int insertValue;
+        int insertIndex;
         for (int i = 1; i < arr.length; i++) {
-            int insertValue = arr[i];
-            int insertIndex = i-1;
+            insertValue = arr[i];
+            insertIndex = i - 1;
 
-            while (insertIndex>=0 && insertValue<arr[insertIndex]){
+            while (insertIndex >= 0 && insertValue < arr[insertIndex]) {
                 // 如果当前数比前一个小，则前一个数后移
-                arr[insertIndex+1] =arr[insertIndex];
-                insertIndex --;
+                arr[insertIndex + 1] = arr[insertIndex];
+                insertIndex--;
             }
             // 判断是否需要插入,优化
-            if (insertIndex+1!=i){
-                arr[insertIndex+1] = insertValue;
+            if (insertIndex + 1 != i) {
+                arr[insertIndex + 1] = insertValue;
             }
             // 当退出while循环时，说明插入的位置找到，insertIndex+1
 
