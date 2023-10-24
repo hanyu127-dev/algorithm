@@ -1,5 +1,8 @@
 package com.hanyu.sort;
 
+/**
+ * @author 李小帅
+ */
 public class ShellSort {
     public static void main(String[] args) {
         int[] arr = new int[80000];
@@ -48,7 +51,6 @@ public class ShellSort {
 
         // 交换法
         int temp;
-        int count =1;
         for (int gap = arr.length/2;gap>0;gap/=2){
 
             for (int i = gap; i < arr.length; i++) {
@@ -123,4 +125,5 @@ public class ShellSort {
 
 
     }
+
 }
