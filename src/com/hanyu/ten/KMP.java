@@ -1,7 +1,7 @@
 package com.hanyu.ten;
 
 import java.util.Arrays;
-
+// KMP算法
 public class KMP {
     public static void main(String[] args) {
         // 测试暴力匹配算法
